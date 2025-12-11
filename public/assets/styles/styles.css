@@ -1,7 +1,7 @@
 /* =============================================== */
 /* BASIC SETUP  */
 /* =============================================== */
-@import url('https://fonts.googleapis.com/css2?family=AR+One+Sans:wght@400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=AR+One+Sans:wght@400..700&family=Kalam:wght@300;400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
     line-height: 1.5;
@@ -21,7 +21,7 @@
     margin: 0;
     box-sizing: border-box;
     font-size: 62.5%;
-    font-family: 'AR One Sans', 'Poppins', 'Roboto Mono', 'Roboto', Arial, Helvetica, sans-serif;
+    font-family: 'Kalam', 'AR One Sans', 'Poppins', 'Roboto Mono', 'Roboto', Arial, Helvetica, sans-serif;
 
     --black_color: #000;
     --white_color: #fff;
@@ -52,7 +52,7 @@
     --fs_heading_xl: clamp(4rem, 2.6vw + 4rem, 5.6rem);
     --fs_heading_lg: clamp(3.2rem, 2vw + 3.2rem, 4.2rem);
     --fs_heading_md: clamp(2.8rem, 1.8vw + 2.8rem, 3.6rem);
-    --fs_heading_sm: clamp(2rem, 1.6vw + 1.8rem, 2.6rem);
+    --fs_heading_sm: clamp(2rem, 1.6vw + 2.2rem, 2.6rem);
 
     --fs_normal_xl: clamp(1.9rem, 1.4vw + 1.8rem, 2.4rem);
     --fs_normal_lg: clamp(1.66rem, 1vw + 1.7rem, 1.86rem);
@@ -71,6 +71,15 @@
     --distance_ssm: 4px;
 
     --scroll_bar_border_radius: 6px;
+
+    --blue_paper_color: #b8e6fe;
+    --pink_paper_color: #ffcdf6;
+    --red_paper_color: #ffaaaa;
+    -purple_paper_color: #e0c5ff;
+    --green_paper_color: #b9f8cf;
+    --yellow_paper_color: #faed88;
+
+    --paper_shadow_height: 20px;
 }
 
 /* Smooth scrolling, prevent sudden pop  */
@@ -141,4 +150,126 @@ h6 {
 
 ::-webkit-scrollbar-thumb:window-inactive {
     /* background: var(--light_blue_color); */
+}
+
+body {
+    min-height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1.5fr 16fr 1.5fr;
+    grid-template-rows: 1fr 12fr 1fr;
+    background: #333;
+    background: linear-gradient(296deg, #333333 0%, #404040 50%, #5e5e5e 100%);
+}
+
+.bodyContentWrapper {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    background-color: var(--snow_white_color);
+    border: var(--distance_xl) solid #bda27e;
+    border-color: #a98d69 #d1b692 #b89c77 #8a7455;
+    box-shadow: inset 4px 2px 6px rgba(0, 0, 0, 0.66), inset -2px -2px 6px rgba(0, 0, 0, 0.36);
+
+    font-size: 1rem;
+    padding: 4.6em;
+
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
+    flex-direction: column;
+    gap: clamp(30px, 3.6em, 40px);
+}
+
+.pageTitle {
+    font-size: var(--fs_heading_xl);
+    margin: 0 auto;
+    font-weight: 900;
+    color: var(--black_text);
+
+    cursor: default;
+}
+
+.msgWrapper {
+    font-size: 1rem;
+    flex: 1;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: clamp(20px, 2.4em, 26px);
+    column-gap: 20px;
+    row-gap: clamp(62px, 6.6em, 70px);
+}
+
+.noMsgText {
+    font-size: var(--fs_normal_md);
+    cursor: default;
+    margin: 0 auto;
+}
+
+.messageWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.messagePaper {
+    width: clamp(220px, 24rem, 250px);
+    aspect-ratio: 1 / 0.75;
+    background-color: var(--red_paper_color);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    padding: 2em;
+
+    cursor: pointer;
+    position: relative;
+    /* isolation: isolate; */
+    z-index: 5;
+}
+
+.paperShadow {
+    position: absolute;
+    height: var(--paper_shadow_height);
+    background-color: red;
+    width: 100%;
+    z-index: -1;
+
+    /* left: 10px;
+    transform: skew(-5deg) rotate(-5deg);
+    box-shadow: 0 8px 15px #000000b3; */
+}
+
+.paperShadow::before {
+    content: '';
+    position: absolute;
+    display: block;
+    /* background-color: red; */
+    height: var(--paper_shadow_height);
+    width: 50%;
+    z-index: -1;
+}
+
+.messagePaper::after {
+    content: '📌';
+    display: block;
+    position: absolute;
+    font-size: var(--fs_heading_sm);
+    top: -26px;
+    transform: rotate(-30deg);
+}
+
+.paperContent {
+    overflow: hidden;
+}
+
+.paperContent p {
+    font-size: var(--fs_normal_lg);
+    color: var(--black_text);
+    font-weight: 500;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
 }

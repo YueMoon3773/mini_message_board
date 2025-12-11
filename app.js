@@ -21,7 +21,65 @@ app.listen(process.env.PORT || 3000, (err) => {
 });
 
 app.get('/', (req, res) => {
-    res.render('index', { pageTitle: 'Home' });
+    const messages = [
+        {
+            text: 'Hi there!',
+            user: 'Amando',
+            added: new Date(),
+        },
+        {
+            text: 'Hello World!',
+            user: 'Charles',
+            added: new Date(),
+        },
+        {
+            text: 'Hi there!',
+            user: 'Amando',
+            added: new Date(),
+        },
+        {
+            text: 'Hello World!',
+            user: 'Charles',
+            added: new Date(),
+        },
+        {
+            text: 'Hi there!',
+            user: 'Amando',
+            added: new Date(),
+        },
+        {
+            text: 'Hello World!',
+            user: 'Charles',
+            added: new Date(),
+        },
+        {
+            text: 'Hi there!',
+            user: 'Amando',
+            added: new Date(),
+        },
+        {
+            text: 'Hello World!',
+            user: 'Charles',
+            added: new Date(),
+        },
+        {
+            text: 'Hi there!',
+            user: 'Amando',
+            added: new Date(),
+        },
+        {
+            text: 'Hello World!',
+            user: 'Charles',
+            added: new Date(),
+        },
+    ];
+    // const messages = [];
+
+    res.render('index', { pageTitle: 'Home', messages });
+});
+
+app.get('/new', (req, res) => {
+    res.render('newMsg', { pageTitle: 'New message' });
 });
 
 // Handle Not found Error

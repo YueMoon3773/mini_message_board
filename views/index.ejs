@@ -2,6 +2,16 @@
 <html lang="en">
     <%- include('./components/head.ejs') %>
     <body>
-        <h1>HELLO</h1>
+        <div class="bodyContentWrapper">
+            <h1 class="pageTitle">MESSAGES BOARD</h1>
+
+            <div class="msgWrapper">
+                <% if(messages && messages.length > 0) {%> <% messages.forEach(message => { %>
+                <div class="messageWrapper"><%- include('./components/messageOnBoard.ejs', {message})%></div>
+                <%}) %> <%} else {%>
+                <p class="noMsgText">No message to display yet</p>
+                <%}%>
+            </div>
+        </div>
     </body>
 </html>
