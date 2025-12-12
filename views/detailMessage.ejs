@@ -2,12 +2,9 @@
 <html lang="en">
     <%- include('./components/head.ejs')%>
     <body>
-        <div class="errorWrapper">
-            <% if(errorText!==undefined) {%>
-            <h1><%=errorText%></h1>
-            <%} else { %>
-            <h1>PAGE NOT FOUND</h1>
-            <%}%>
+        <div class="bodyContentWrapper">
+            <h1 class="pageTitle">MESSAGE DETAILS</h1>
+            <div class="msgDetailsWrapper"><%- include('./components/messageDetails.ejs')%></div>
             <button type="button" class="goBackBtn">Go back to Home</button>
         </div>
     </body>

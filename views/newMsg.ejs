@@ -2,6 +2,35 @@
 <html lang="en">
     <%- include('./components/head.ejs') %>
     <body>
-        <h1>NEW MESSAGE</h1>
+        <div class="bodyContentWrapper">
+            <h1 class="pageTitle">NEW MESSAGE</h1>
+
+            <form class="newMsgForm" method="POST" action="/new">
+                <label class="newMsgFormLabel" for="authorFormInp">
+                    Author
+                    <input name="authorFormInp" id="authorFormInp" type="text" class="newMsgFormInp"
+                /></label>
+
+                <label class="newMsgFormLabel" for="contentFormTextarea">
+                    Content
+                    <textarea name="contentFormTextarea" id="contentFormTextarea" class="newMsgFormTextarea"></textarea>
+                </label>
+
+                <!-- <a href="/" type="button" class="formBtn">Cancel</a>
+                <a href="/" type="button" class="formBtn">Submit</a> -->
+
+                <button type="button" class="formBtn">Cancel</button>
+                <button type="submit" class="formBtn">Submit</button>
+            </form>
+        </div>
     </body>
+
+    <script>
+        const cancelBtn = document.querySelector('.formBtn[type="button"]');
+        console.log(cancelBtn);
+
+        cancelBtn.addEventListener('click', () => {
+            window.location.href = '/';
+        });
+    </script>
 </html>

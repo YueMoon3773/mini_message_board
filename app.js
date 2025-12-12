@@ -2,6 +2,8 @@ const express = require('express');
 const path = require('node:path');
 require('dotenv').config();
 
+const msgRouter = require('./routes/message');
+
 const app = express();
 
 // Set up views directory
@@ -20,67 +22,8 @@ app.listen(process.env.PORT || 3000, (err) => {
     console.log(`Listen on PORT: ${process.env.PORT !== undefined ? process.env.PORT : 3000}`);
 });
 
-app.get('/', (req, res) => {
-    const messages = [
-        {
-            text: 'Hi there!',
-            user: 'Amando',
-            added: new Date(),
-        },
-        {
-            text: 'Hello World!',
-            user: 'Charles',
-            added: new Date(),
-        },
-        {
-            text: 'Hi there!',
-            user: 'Amando',
-            added: new Date(),
-        },
-        {
-            text: 'Hello World!',
-            user: 'Charles',
-            added: new Date(),
-        },
-        {
-            text: 'Hi there!',
-            user: 'Amando',
-            added: new Date(),
-        },
-        {
-            text: 'Hello World!',
-            user: 'Charles',
-            added: new Date(),
-        },
-        {
-            text: 'Hi there!',
-            user: 'Amando',
-            added: new Date(),
-        },
-        {
-            text: 'Hello World!',
-            user: 'Charles',
-            added: new Date(),
-        },
-        {
-            text: 'Hi there!',
-            user: 'Amando',
-            added: new Date(),
-        },
-        {
-            text: 'Hello World!',
-            user: 'Charles',
-            added: new Date(),
-        },
-    ];
-    // const messages = [];
+app.use('/', msgRouter);
 
-    res.render('index', { pageTitle: 'Home', messages });
-});
-
-app.get('/new', (req, res) => {
-    res.render('newMsg', { pageTitle: 'New message' });
-});
 
 // Handle Not found Error
 // app.use((err, req, res, next) => {
