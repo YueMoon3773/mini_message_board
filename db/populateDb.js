@@ -27,8 +27,14 @@ async function main() {
     const client = new Client({
         connectionString: `${process.env.DB_URL}`,
     });
+    console.log('DONE SETTING CONNECTION STRING');
+
     await client.connect();
+    console.log('CONNECTED TO DB');
+
     await client.query(SQL);
+    console.log('CREATED TABLE AND INSERTED DATA');
+
     await client.end();
     console.log('DB SET UP DONE');
 }
