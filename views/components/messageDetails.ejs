@@ -1,3 +1,5 @@
+<% if (!message) { throw new Error('message is undefined in include'); } else { %>
+
 <div class="msgDetails" data-id="<%=message.id%>">
     <p class="detailsTitle">Author</p>
     <p class="detailsContent"><%=message.user_name%></p>
@@ -6,3 +8,5 @@
     <p class="detailsTitle">Created at</p>
     <p class="detailsContent"><%=message.created_time%></p>
 </div>
+
+<%}%>
