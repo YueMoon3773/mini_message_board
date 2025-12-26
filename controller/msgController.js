@@ -2,7 +2,7 @@ const db = require('../db/queries');
 
 const homeGet = async (req, res) => {
     const messages = await db.getAllMessages();
-    console.log(messages);
+    // console.log(messages);
 
     res.render('index', { pageTitle: 'Home', messages });
 };
