@@ -14,12 +14,12 @@ CREATE TABLE IF NOT EXISTS ${process.env.DB_TABLE_NAME} (
 );
 
 INSERT INTO ${process.env.DB_TABLE_NAME} (userName, messageText) VALUES
-    ('The Joker', 'Why so serious?'),
-    ('T''Challa', 'Wakanda Forever!'),
-    ('Dory', 'Just keep swimming'),
-    ('Buzz Lightyear', 'To infinity and beyond!'),
-    ('Captain America', 'Avengers... assemble.'),
-    ('Gollum', 'My precious');
+    ("The Joker", "Why so serious?"),
+    ("T'Challa", "Wakanda Forever!"),
+    ("Dory", "Just keep swimming"),
+    ("Buzz Lightyear", "To infinity and beyond!"),
+    ("Captain America", "Avengers... assemble."),
+    ("Gollum", "My precious");
 `;
 
 async function main() {
