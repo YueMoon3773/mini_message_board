@@ -4,6 +4,7 @@ require('dotenv').config();
 
 const msgRouter = require('./routes/message');
 
+const bePort = process.env.BE_PORT || 3000;
 const app = express();
 
 // Set up views directory
@@ -17,13 +18,12 @@ app.use(express.static(publicPath));
 // Use middleware to get post req, take all data from url and convert to an encoded object to use in req
 app.use(express.urlencoded({ extended: true }));
 
-app.listen(process.env.PORT || 3000, (err) => {
+app.listen(bePort, (err) => {
     if (err) console.log(err);
     console.log(`Listen on PORT: ${process.env.PORT !== undefined ? process.env.PORT : 3000}`);
 });
 
 app.use('/', msgRouter);
-
 
 // Handle Not found Error
 // app.use((err, req, res, next) => {
