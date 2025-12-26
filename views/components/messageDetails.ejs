@@ -1,5 +1,5 @@
-<% if (!message) { throw new Error('message is undefined in include'); } else { %> <% console.log("Message details
-received:", message) %>
+<% if (!message) { throw new Error('message is undefined in include'); } else { %> <% console.log("Message received:",
+message) %>
 <div class="msgDetails" data-id="<%=message.id%>">
     <p class="detailsTitle">Author</p>
     <p class="detailsContent"><%=message.user_name%></p>
