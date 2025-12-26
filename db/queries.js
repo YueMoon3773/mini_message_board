@@ -8,7 +8,7 @@ const getAllMessages = async () => {
 };
 
 const insertMessage = async (username, messageText) => {
-    await pool.query(`INSERT INTO ${process.env.DB_TABLE_NAME} (username, messageText) VALUES ($1, $2);`, [
+    await pool.query(`INSERT INTO ${process.env.DB_TABLE_NAME} (user_name, message_text) VALUES ($1, $2);`, [
         username,
         messageText,
     ]);

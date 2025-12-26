@@ -4,10 +4,7 @@
     <body>
         <div class="bodyContentWrapper">
             <h1 class="pageTitle">MESSAGE DETAILS</h1>
-            <div class="msgDetailsWrapper">
-                <% console.log("Message to transfer:", message) %> <%- include('./components/messageDetails.ejs',
-                {message: message})%>
-            </div>
+            <div class="msgDetailsWrapper"><%- include('./components/messageDetails.ejs', {message: message})%></div>
             <button type="button" class="goBackBtn">Go back to Home</button>
         </div>
     </body>
