@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS ${process.env.DB_TABLE_NAME} (
     id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     userName VARCHAR(30),
     messageText VARCHAR(255),
-    createdTime TIMESTAMPTZ DEFAULT NOW()
+    createdTime TIMESTAMP DEFAULT NOW()
 );
 
 INSERT INTO ${process.env.DB_TABLE_NAME} (userName, messageText) VALUES
