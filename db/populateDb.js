@@ -4,18 +4,18 @@ const { Client } = require('pg');
 require('dotenv').config();
 
 const SQL = `
-DROP TABLE ${process.env.DB_TABLE_NAME};
+DROP TABLE IF EXISTS ${process.env.DB_TABLE_NAME};
 
 CREATE TABLE IF NOT EXISTS ${process.env.DB_TABLE_NAME} (
-    id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTIFY,
+    id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     userName VARCHAR(30),
     messageText VARCHAR(255),
-    createdTime TIMESTAMP DEFAULT NOW()
+    createdTime TIMESTAMPTZ DEFAULT NOW()
 );
 
-INSERT INTO ${process.env.DB_TABLE_NAME} (userName, text) VALUES
+INSERT INTO ${process.env.DB_TABLE_NAME} (userName, messageText) VALUES
     ('The Joker', 'Why so serious?'),
-    ('T'Challa', 'Wakanda Forever!'),
+    ('T''Challa', 'Wakanda Forever!'),
     ('Dory', 'Just keep swimming'),
     ('Buzz Lightyear', 'To infinity and beyond!'),
     ('Captain America', 'Avengers... assemble.'),
