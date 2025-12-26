@@ -26,7 +26,8 @@
             </div>
 
             <div class="msgWrapper">
-                <% if(messages && messages.length > 0) {%> <% messages.forEach(message => { %>
+                <% if(messages && messages.length > 0) {%> <% messages.forEach(message => { %> <% console.log(message)
+                %>
                 <div class="messageWrapper"><%- include('./components/messageOnBoard.ejs', {message})%></div>
                 <%}) %> <%} else {%>
                 <p class="noMsgText">No message to display yet</p>
