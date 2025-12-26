@@ -25,7 +25,7 @@ INSERT INTO ${process.env.DB_TABLE_NAME} (userName, text) VALUES
 async function main() {
     console.log('PREPARING DB...');
     const client = new Client({
-        connectionString: `postgresql://${process.env.DB_USER_NAME}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_DATABASE}`,
+        connectionString: `${process.env.DB_URL}`,
     });
     await client.connect();
     await client.query(SQL);
