@@ -24,7 +24,7 @@ const msgDetailsGet = async (req, res) => {
 
     const message = await db.getMessageById(msgId);
     if (message) {
-        res.render('detailMessage', { pageTitle: 'Message detail', message });
+        res.render('detailMessage', { pageTitle: 'Message detail', message: message[0] });
     } else {
         res.render('404', { pageTitle: 'Message not found', errorText: 'Message not found' });
     }
