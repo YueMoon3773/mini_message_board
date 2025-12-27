@@ -34,5 +34,5 @@ app.use('/', msgRouter);
 // });
 
 app.use((req, res) => {
-    res.status(404).render('404', { pageTitle: 'Error' });
+    res.status(404).render('404', { pageTitle: 'Error', errorText: undefined });
 });

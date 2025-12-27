@@ -39,7 +39,7 @@ let messages = require('../db/db');
 
 msgRouter.get('/', msgController.homeGet);
 msgRouter.get('/new', msgController.newMsgGet);
-msgRouter.get('/new', msgController.newMsgPost);
+msgRouter.post('/new', msgController.newMsgPost);
 msgRouter.get('/details/:id', msgController.msgDetailsGet);
 
 module.exports = msgRouter;
